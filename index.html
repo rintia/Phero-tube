@@ -16,6 +16,8 @@
             font-family: 'Inter', sans-serif;
         }
     </style>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/c7e92be461.js" crossorigin="anonymous"></script>
 </head>
 <body class="inter-font p-2 md:p-6 mx-auto">
     <header>
@@ -35,23 +37,25 @@
         </div>
         <hr class="my-4">
     </header>
-    <main>
-        <div id="genre-container" class="flex justify-center gap-5">
-            <!-- <div>
-                <button class="px-6 py-3 bg-[#cccccc] rounded">Sort by view</button>
-            </div>
-            <div>
-                <button class="px-6 py-3 bg-[#cccccc] rounded">Sort by view</button>
-            </div>
-            <div>
-                <button class="px-6 py-3 bg-[#cccccc] rounded">Sort by view</button>
-            </div> -->
+    <main >
+        <!-- category buttons -->
+        <div id="category-container" class="grid grid-cols-2 mx-auto md:flex md:justify-center gap-5 mb-8">
+           
         </div>
-
+        <!-- cards -->
+        <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+           
+        </div>
+         <div id="main-container" class="hidden">
+            <div class="">
+                <div >
+                    <img class="mb-2 mx-auto" src="./Icon.png" alt="">
+                    <h1 class="font-semibold text-4xl text-center">Oops!! Sorry, There is no <br>content here</h1>
+                  </div>
+             </div>
+         </div>
     </main>
-    <footer>
-
-    </footer>
+   
     <!-- js file -->
     <script src="./index.js"></script>
 </body>
