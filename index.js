@@ -31,7 +31,6 @@ const showAllCards = (videos) =>{
   const mainContainer = document.getElementById('main-container'); 
   // show cards
   if(videos.length === 0){
-    console.log('no data');
     mainContainer.classList.remove('hidden');
     
 }
