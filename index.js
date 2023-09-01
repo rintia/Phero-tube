@@ -1,3 +1,4 @@
+let videos = null;
 const loadCategory = async() =>{
     // fetch category data
     const res = await fetch('https://openapi.programming-hero.com/api/videos/categories');
@@ -5,6 +6,7 @@ const loadCategory = async() =>{
     const categories = data.data;
     // show all he category buttons
     const categoryContainer = document.getElementById('category-container');
+    categoryContainer.innerHTML = "";
     categories.forEach(category => {
         const div = document.createElement('div');
         div.innerHTML =`
@@ -17,14 +19,13 @@ const loadCategory = async() =>{
 const loadVideos = async(id) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await res.json();
-    const videos = data.data;
-    sort(videos);
+    videos = data.data;
     showAllCards(videos);
-    console.log(videos);
 }
 
 // show All Cards function
-const showAllCards = (videos) =>{
+const showAllCards = (videos) =>{   
+
   const cardContainer = document.getElementById('card-container');
   cardContainer.innerHTML = "";
   const mainContainer = document.getElementById('main-container'); 
@@ -46,9 +47,7 @@ videos.forEach(video =>{
         const minutes = (hours - hr) * 60;
         const mins = Math.floor(minutes);
 
-        // views convert
-        const views = parseFloat(video.others.views);
-        console.log(views);
+
        
     
     
@@ -88,12 +87,13 @@ videos.forEach(video =>{
 }
 }
 
-function sortByView(videos){
+function sortByView(){
   videos.sort(function (a,b){
-    if(parseFloat(a.others.views) > parseFloat(b.others.views)) return -1;
-    if(parseFloat(a.others.views) < parseFloat(b.others.views)) return 1;
-     return 0;
-  })
+         if(parseFloat(a.others.views) > parseFloat(b.others.views)) return -1;
+        if(parseFloat(a.others.views) < parseFloat(b.others.views)) return 1;
+          return 0;
+       });
+       showAllCards(videos);
 }
  
 loadCategory();
