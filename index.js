@@ -22,6 +22,7 @@ const loadVideos = async(id) => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = "";
     const mainContainer = document.getElementById('main-container');
+    
     // show cards
     if(videos.length === 0){
         console.log('no data');
@@ -76,5 +77,6 @@ const loadVideos = async(id) => {
    }
 }
 
+ 
 loadCategory();
 loadVideos('1000')
